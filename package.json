@@ -1,0 +1,17 @@
+{
+  "name": "hrms-saas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "White-label multi-tenant HRMS SaaS (attendance, geofencing, leave, branding, custom domains)",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces --include-workspace-root",
+    "dev:backend": "npm run dev --workspace backend",
+    "dev:frontend": "npm run dev --workspace frontend",
+    "db:setup": "npm run prisma:generate --workspace backend && npm run prisma:migrate --workspace backend && npm run db:seed --workspace backend",
+    "build:frontend": "npm run build --workspace frontend"
+  }
+}
